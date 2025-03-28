@@ -19,5 +19,5 @@ def read_root():
 def get_similarity_score(pair: TextPair):
     embeddings = model.encode([pair.text1, pair.text2])
     similarity = util.cos_sim(embeddings[0], embeddings[1]).item()
-    similarity =max(similarity, 0)
+    similarity =min(max(similarity, 0), 1)
     return {"similarity score": round(similarity, 3)}
