@@ -5,7 +5,7 @@ from sentence_transformers import SentenceTransformer, util
 app = FastAPI()
 
 # Load pre-trained Sentence Transformer model
-model = SentenceTransformer('all-MiniLM-L6-v2')
+model = SentenceTransformer('paraphrase-MiniLM-L3-v2')
 
 class TextPair(BaseModel):
     text1: str
